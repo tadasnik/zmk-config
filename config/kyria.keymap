@@ -21,16 +21,16 @@
 // --------------------------------------------- Colemak - DH -------------------------------------------
 // | ESC |  Q  |  W  |  F  |  P  |  B  |                            |  J  |  L  |  U  |  Y  |  ;  |  \  |
 // | TAB |  A  |  R  |  S  |  T  |  G  |                            |  M  |  N  |  E  |  I  |  O  |  '  |
-// | SFT |  Z  |  X  |  C  |  D  |  V  |  ESC  | SPC |  | RET | GUI |  K  |  H  |  ,  |  .  |  /  | CTR |
-//                   | SYS | TAB | CTR |  SFT  | SPC |  | RET | BSP | DEL | ALT |     |
+// | SFT |  Z  |  X  |  C  |  D  |  V  |  DEL  | NAV |  | NAV | BSP |  K  |  H  |  ,  |  .  |  /  | CTR |
+//                   | SYS | CTR | SPC |  RET  | SYM |  | NUM | RET | SPC | CTR | SYM |
 
             label = "Default";
 
             bindings = <
    &kp ESC   &kp Q &kp W &kp F &kp P &kp B                                  &kp J &kp L &kp U     &kp Y   &kp SEMI &kp BSLH
    &kp TAB   &kp A &kp R &kp S &kp T &kp G                                  &kp M &kp N &kp E     &kp I   &kp O    &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp D &kp V &kp DEL &mo nav &mo nav &kp BSPC &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-    &mo sys &kp LCTRL &lt LSHFT SPACE &lt LALT RET &mo sym &mo num &lt LALT RET &lt SHIFT SPACE &kp RCTRL &mo sym 
+   &kp LSHFT &kp Z &kp X &kp C &kp D &kp V &kp DEL &mo NAV &mo NAV &kp BSPC &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+    &mo SYS &kp LCTRL &lt LSHFT SPACE &lt LALT RET &mo SYM &mo NUM &lt LALT RET &lt SHIFT SPACE &kp RCTRL &mo SYM 
             >;
         };
 
@@ -44,9 +44,9 @@
             label = "symbols";
 
             bindings = <
-    &gresc    &kp LT    &kp LBKT  &kp LBRC   &kp LPAR  &kp FSLH                                                  &kp BSLH &kp RPAR  &kp RBRC  &kp RBKT  &kp GT   &kp BSLH
+    &kp ESC    &kp LT    &kp LBKT  &kp LBRC   &kp LPAR  &kp FSLH                                                  &kp BSLH &kp RPAR  &kp RBRC  &kp RBKT  &kp GT   &kp BSLH
     &kp TAB   &kp HASH  &kp STAR  &kp PLUS   &kp UNDER &kp AT                                                    &kp AMPS &kp MINUS &kp EQUAL &kp CARET &kp DLLR &kp SQT
-    &kp LSHFT &kp PRCNT &kp EXCL  &kp GRAVE  &kp COLON &kp APOS  &gresc  &lt LOWER SPACE  &lt RAISE RET &kp LGUI &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &kp RCTRL
+    &kp LSHFT &kp PRCNT &kp EXCL  &kp GRAVE  &kp COLON &kp APOS  &kp ESC  &lt LOWER SPACE  &lt RAISE RET &kp LGUI &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &kp RCTRL
                                   &kp C_MUTE &kp TAB   &kp LCTRL &kp TAB &lt LOWER SPACE  &lt RAISE RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
             >;
         };
@@ -73,7 +73,6 @@
     &trans &trans &trans &trans &trans &trans &trans &trans              &trans &trans &kp SE_PLUS &kp N1 &kp N2 &kp N3 &kp DOT &kp SE_FLSH
                          &trans &trans &trans &trans &trans              &kp DOT       &kp N0 &trans &trans &trans
             >;
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
         };
         nav_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
@@ -88,5 +87,19 @@
 	                       &trans  &trans   &trans        &trans &trans  &trans &trans    &trans    &none     &trans
 			>;
 		};
+        sys_layer {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// | ---  | Tab-| Tab+| win+ | win- | excel|                                          | Pgup | Home |  Up   | End  | ScrUp | ---  |
+// | ---  | Win | Shft| alt  | ctrl | app  |                                          | Pgdw | Left |  Down | Right| ScrDn | ---  |
+// | ---  | --- | F2  | F3   | F5   | excel|   ---   |  ---    |  |   ---   |  ---    |      | Predk| ---   | NxDk |   -   |---   |
+//                    | ENC  | ---  | ---  |   ---   |  ---    |  |   ---   |  ---    | ---  | ---  | ---   |
+            bindings = <
+	&trans &kp PTAB &kp NTAB  &kp PWIN &kp NWIN  &trans                                &kp PG_UP &kp HOME &kp UP   &kp END   &kp K_SCROLL_UP &trans
+	&trans &kp LGUI &kp LSHFT &kp LALT &kp LCTRL &kp K_APP                             &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp K_SCROLL_DOWN &trans
+	&trans &trans   &kp F2    &kp F3   &kp F5    &trans &trans &trans  &trans &trans &trans   &trans &trans   &trans &trans &trans
+	                       &trans  &trans   &trans        &trans &trans  &trans &trans    &trans    &none     &trans
+			>;
+		};
+
 	};
 };
