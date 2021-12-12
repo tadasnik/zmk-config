@@ -8,24 +8,81 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define DEFAULT 0
+#define SYM     1
+#define NUM     2
+#define NAV     3
+#define SYS     4
 / {
 	keymap {
 		compatible = "zmk,keymap";
 
-		default_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |  ESC  |  Q  |  W  |  F   |  P   |  B   |                                          |  J   |  L    |  U    |  Y   |   ;   |   =  |
-// |  TAB  |  A  |  R  |  S   |  T   |  G   |                                          |  M   |  N    |  E    |  I   |   O   | SHIFT |
-// | SHIFT |  Z  |  X  |  C   |  D   |  V   | L SHIFT | BTCLR   |  | L SHIFT | L SHIFT |  K   |  H    |  ,    |  .   |   /   | CTRL |
-//                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
-			bindings = <
-	&kp ESC   &kp Q &kp W &kp F &kp P &kp B                                                &kp J &kp L  &kp U     &kp Y   &kp SEMI    &kp EQUAL
-	&kp TAB   &kp A &kp R &kp S &kp T &kp G                                                &kp M &kp N  &kp E     &kp I   &kp O &kp RSHIFT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &bt BT_CLR        &kp LSHFT &kp LSHFT &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                 &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
-			>;
+        default_layer {
+// --------------------------------------------- Colemak - DH -------------------------------------------
+// | ESC |  Q  |  W  |  F  |  P  |  B  |                            |  J  |  L  |  U  |  Y  |  ;  |  \  |
+// | TAB |  A  |  R  |  S  |  T  |  G  |                            |  M  |  N  |  E  |  I  |  O  |  '  |
+// | SFT |  Z  |  X  |  C  |  D  |  V  |  ESC  | SPC |  | RET | GUI |  K  |  H  |  ,  |  .  |  /  | CTR |
+//                   | SYS | TAB | CTR |  SFT  | SPC |  | RET | BSP | DEL | ALT |     |
 
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-		};
+        label = "Default";
+
+        bindings = <
+   &kp ESC   &kp Q &kp W &kp F &kp P &kp B                                  &kp J &kp L &kp U     &kp Y   &kp SEMI &kp BSLH
+   &kp TAB   &kp A &kp R &kp S &kp T &kp G                                  &kp M &kp N &kp E     &kp I   &kp O    &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp D &kp V &kp DEL &mo nav &mo nav &kp BSPC &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+    &mo sys &kp LCTRL &lt LSHFT SPACE &lt LALT RET &mo sym &mo num &lt LALT RET &lt SHIFT SPACE &kp RCTRL &mo sym 
+            >;
+        };
+
+        sym_layer { // keys on each side compliment each other in some way
+// ------------------------------------------ MODIFIER LAYER -------------------------------------------
+// | ESC |  <  |  [  |  {  |  (  |  /  |                           |  \  |  )  |  }  |  ]  |  >  |  \  |
+// | TAB |  #  |  *  |  +  |  _  |  @  |                           |  &  |  -  |  =  |  ^  |  $  |  '  |
+// | SFT |  %  |  !  |  `  |  :  |  '  | ESC |     |  | RET |  GUI |  "  |  ;  |  ~  |  ?  |  |  | CTR |
+//                   | MUT | TAB | CTR | SFT |     |  | RET |  BSP | DEL | ALT |     |
+
+            label = "symbols";
+
+            bindings = <
+    &gresc    &kp LT    &kp LBKT  &kp LBRC   &kp LPAR  &kp FSLH                                                  &kp BSLH &kp RPAR  &kp RBRC  &kp RBKT  &kp GT   &kp BSLH
+    &kp TAB   &kp HASH  &kp STAR  &kp PLUS   &kp UNDER &kp AT                                                    &kp AMPS &kp MINUS &kp EQUAL &kp CARET &kp DLLR &kp SQT
+    &kp LSHFT &kp PRCNT &kp EXCL  &kp GRAVE  &kp COLON &kp APOS  &gresc  &lt LOWER SPACE  &lt RAISE RET &kp LGUI &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &kp RCTRL
+                                  &kp C_MUTE &kp TAB   &kp LCTRL &kp TAB &lt LOWER SPACE  &lt RAISE RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
+            >;
+        };
+
+        number_layer {
+// ------------------------------------------ NUMBER LAYER --------------------------------------------
+// | ESC | ESC |  7  |  8  |  9  |  ,  |                          | DWN | RGT |     |     |     |  \  |
+// | TAB | TAB |  4  |  5  |  6  |  0  |                          | HME | PGD | PGU | END |     |  '  |
+// | SFT | CPS |  1  |  2  |  3  |  .  | ESC | SPC |  |     | GUI |  UP | LFT |     |     |     | CTR |
+//                   | MUT | TAB | CTR | SFT | SPC |  |     | BSP | DEL | ALT |     |
+
+            label = "Number";
+
+            bindings = <
+    &gresc    &gresc   &kp N7 &kp N8    &kp N9  &kp DOT                                          &kp DOWN &kp RIGHT &none     &none   &none  &kp BSLH
+    &kp TAB   &kp TAB  &kp N4 &kp N5    &kp N6  &kp N0                                           &kp HOME &kp PG_DN &kp PG_UP &kp END &none  &kp SQT
+    &kp LSHFT &kp CAPS &kp N1 &kp N2    &kp N3  &kp COMMA &gresc  &lt LOWER SPACE  &lt RAISE RET &kp LGUI &kp UP   &kp LEFT  &none     &none   &none  &kp RCTRL
+                             &kp C_MUTE &kp TAB &kp LCTRL &kp TAB &lt LOWER SPACE  &lt RAISE RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
+            >;
+        };
+
+        system_layer {
+// ----------------------------------------- UTILITY LAYER --------------------------------------------
+// | F1  | F2  | F3  | F4  | F5  | F6  |                          | F7  | F8  | F9  | F10 | F11 | F12 |
+// | EFF | SPI | BRI | SAI | HUI | TOG |                          | BT0 | BT1 | BT2 | BT3 | BT4 |     |
+// | EFR | SPD | BRD | SAD | HUD | PTG | ESC | SPC |  |     | GUI | PTG | NXT | PRV | CLR |     | BTG |
+//                   | MUT | TAB | CTR | SFT | SPC |  |     | BSP | DEL | ALT | GMR |
+
+            label = "sys";
+
+            bindings = <
+    &kp F1          &kp F2           &kp F3          &kp F4           &kp F5            &kp F6                                                                       &kp F7            &kp F8       &kp F9       &kp F10      &kp F11      &kp F12
+    &rgb_ug RGB_EFF &rgb_ug RGB_SPI  &rgb_ug RGB_BRI &rgb_ug RGB_SAI  &rgb_ug RGB_HUI   &rgb_ug RGB_TOG                                                              &bt BT_SEL 0      &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
+    &rgb_ug RGB_EFR &rgb_ug RGB_SPD  &rgb_ug RGB_BRD &rgb_ug RGB_SAD  &rgb_ug RGB_HUD   &ext_power EP_TOG &gresc        &lt LOWER SPACE  &lt RAISE RET &kp LGUI      &ext_power EP_TOG &bt BT_NXT   &bt BT_PRV   &bt BT_CLR   &trans       &out OUT_TOG
+                                                     &kp C_MUTE      &kp TAB           &kp LCTRL         &mt LSHFT TAB &lt LOWER SPACE  &lt RAISE RET &mt RALT BSPC &kp DEL           &kp LALT     &kp C_PP
+            >;
+        };          
 	};
 };
