@@ -30,7 +30,7 @@
    &kp ESC   &kp Q &kp W &kp F &kp P &kp B                                  &kp J &kp L &kp U     &kp Y   &kp SEMI &kp BSLH
    &kp TAB   &kp A &kp R &kp S &kp T &kp G                                  &kp M &kp N &kp E     &kp I   &kp O    &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V &kp DEL &mo NAV &mo NAV &kp BSPC &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-    &mo SYS &kp LCTRL &lt LSHFT SPACE &lt LALT RET &mo SYM &mo NUM &lt LALT RET &lt SHIFT SPACE &kp RCTRL &mo SYM 
+    &mo SYS &kp LCTRL &mt LSHFT SPACE &mt LALT RET &mo SYM &mo NUM &mt LALT RET &mt SHIFT SPACE &kp RCTRL &mo SYM 
             >;
         };
 
