@@ -24,9 +24,9 @@
 // | SFT |  Z  |  X  |  C  |  D  |  V  |  ESC  | SPC |  | RET | GUI |  K  |  H  |  ,  |  .  |  /  | CTR |
 //                   | SYS | TAB | CTR |  SFT  | SPC |  | RET | BSP | DEL | ALT |     |
 
-        label = "Default";
+            label = "Default";
 
-        bindings = <
+            bindings = <
    &kp ESC   &kp Q &kp W &kp F &kp P &kp B                                  &kp J &kp L &kp U     &kp Y   &kp SEMI &kp BSLH
    &kp TAB   &kp A &kp R &kp S &kp T &kp G                                  &kp M &kp N &kp E     &kp I   &kp O    &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V &kp DEL &mo nav &mo nav &kp BSPC &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp RCTRL
@@ -51,38 +51,42 @@
             >;
         };
 
-        number_layer {
-// ------------------------------------------ NUMBER LAYER --------------------------------------------
-// | ESC | ESC |  7  |  8  |  9  |  ,  |                          | DWN | RGT |     |     |     |  \  |
-// | TAB | TAB |  4  |  5  |  6  |  0  |                          | HME | PGD | PGU | END |     |  '  |
-// | SFT | CPS |  1  |  2  |  3  |  .  | ESC | SPC |  |     | GUI |  UP | LFT |     |     |     | CTR |
-//                   | MUT | TAB | CTR | SFT | SPC |  |     | BSP | DEL | ALT |     |
 
-            label = "Number";
 
+
+* Numbers Layer:
+ *
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |  1   |  2   |  3   |  4   |  5   |                              |   6  |  7   |  8   |   9  |  0   |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                              |   -  |  4   |  5   |   6  |  ,   |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |   +  |  1   |  2   |   3  |  .   |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |   .  |   0  |      |      |      |
+ *                        `----------------------------------'  `----------------------------------'
+ */
+        numbers_layer {
             bindings = <
-    &gresc    &gresc   &kp N7 &kp N8    &kp N9  &kp DOT                                          &kp DOWN &kp RIGHT &none     &none   &none  &kp BSLH
-    &kp TAB   &kp TAB  &kp N4 &kp N5    &kp N6  &kp N0                                           &kp HOME &kp PG_DN &kp PG_UP &kp END &none  &kp SQT
-    &kp LSHFT &kp CAPS &kp N1 &kp N2    &kp N3  &kp COMMA &gresc  &lt LOWER SPACE  &lt RAISE RET &kp LGUI &kp UP   &kp LEFT  &none     &none   &none  &kp RCTRL
-                             &kp C_MUTE &kp TAB &kp LCTRL &kp TAB &lt LOWER SPACE  &lt RAISE RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
+    &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                          &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
+    &trans &trans &trans &trans &trans &trans                                          &kp KP_MINUS &kp N4 &kp N5 &kp N6 &kp COMMA &kp SE_STAR
+    &trans &trans &trans &trans &trans &trans &trans &trans              &trans &trans &kp SE_PLUS &kp N1 &kp N2 &kp N3 &kp DOT &kp SE_FLSH
+                         &trans &trans &trans &trans &trans              &kp DOT       &kp N0 &trans &trans &trans
             >;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
         };
-
-        system_layer {
-// ----------------------------------------- UTILITY LAYER --------------------------------------------
-// | F1  | F2  | F3  | F4  | F5  | F6  |                          | F7  | F8  | F9  | F10 | F11 | F12 |
-// | EFF | SPI | BRI | SAI | HUI | TOG |                          | BT0 | BT1 | BT2 | BT3 | BT4 |     |
-// | EFR | SPD | BRD | SAD | HUD | PTG | ESC | SPC |  |     | GUI | PTG | NXT | PRV | CLR |     | BTG |
-//                   | MUT | TAB | CTR | SFT | SPC |  |     | BSP | DEL | ALT | GMR |
-
-            label = "sys";
-
+        nav_layer {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// | ---  | Tab-| Tab+| win+ | win- | excel|                                          | Pgup | Home |  Up   | End  | ScrUp | ---  |
+// | ---  | Win | Shft| alt  | ctrl | app  |                                          | Pgdw | Left |  Down | Right| ScrDn | ---  |
+// | ---  | --- | F2  | F3   | F5   | excel|   ---   |  ---    |  |   ---   |  ---    |      | Predk| ---   | NxDk |   -   |---   |
+//                    | ENC  | ---  | ---  |   ---   |  ---    |  |   ---   |  ---    | ---  | ---  | ---   |
             bindings = <
-    &kp F1          &kp F2           &kp F3          &kp F4           &kp F5            &kp F6                                                                       &kp F7            &kp F8       &kp F9       &kp F10      &kp F11      &kp F12
-    &rgb_ug RGB_EFF &rgb_ug RGB_SPI  &rgb_ug RGB_BRI &rgb_ug RGB_SAI  &rgb_ug RGB_HUI   &rgb_ug RGB_TOG                                                              &bt BT_SEL 0      &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
-    &rgb_ug RGB_EFR &rgb_ug RGB_SPD  &rgb_ug RGB_BRD &rgb_ug RGB_SAD  &rgb_ug RGB_HUD   &ext_power EP_TOG &gresc        &lt LOWER SPACE  &lt RAISE RET &kp LGUI      &ext_power EP_TOG &bt BT_NXT   &bt BT_PRV   &bt BT_CLR   &trans       &out OUT_TOG
-                                                     &kp C_MUTE      &kp TAB           &kp LCTRL         &mt LSHFT TAB &lt LOWER SPACE  &lt RAISE RET &mt RALT BSPC &kp DEL           &kp LALT     &kp C_PP
-            >;
-        };          
+	&trans &kp PTAB &kp NTAB  &kp PWIN &kp NWIN  &trans                                &kp PG_UP &kp HOME &kp UP   &kp END   &kp K_SCROLL_UP &trans
+	&trans &kp LGUI &kp LSHFT &kp LALT &kp LCTRL &kp K_APP                             &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp K_SCROLL_DOWN &trans
+	&trans &trans   &kp F2    &kp F3   &kp F5    &trans &trans &trans  &trans &trans &trans   &trans &trans   &trans &trans &trans
+	                       &trans  &trans   &trans        &trans &trans  &trans &trans    &trans    &none     &trans
+			>;
+		};
 	};
 };
