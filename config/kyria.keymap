@@ -10,9 +10,6 @@
 
 #define DEFAULT 0
 #define SYM     1
-#define NUM     2
-#define NAV     3
-#define SYS     4
 / {
 	keymap {
 		compatible = "zmk,keymap";
@@ -29,8 +26,8 @@
             bindings = <
    &kp ESC   &kp Q &kp W &kp F &kp P &kp B                                  &kp J &kp L &kp U     &kp Y   &kp SEMI &kp BSLH
    &kp TAB   &kp A &kp R &kp S &kp T &kp G                                  &kp M &kp N &kp E     &kp I   &kp O    &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp D &kp V &kp DEL &mo NAV &mo NAV &kp BSPC &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-    &mo SYS &kp LCTRL &mt LSHFT SPACE &mt LALT RET &mo SYM &mo NUM &mt LALT RET &mt SHIFT SPACE &kp RCTRL &mo SYM 
+   &kp LSHFT &kp Z &kp X &kp C &kp D &kp V &kp DEL &trans &mo NUM &kp BSPC &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+   &trans &kp LCTRL &mt LSHFT SPACE &mt LALT RET &mo SYM &trans &mt LALT RET &mt SHIFT SPACE &kp RCTRL &trans 
             >;
         };
 
@@ -52,17 +49,17 @@
         };
 
 
-        numbers_layer {
- //,-------------------------------------------.                              ,-------------------------------------------.
- //|        |  1   |  2   |  3   |  4   |  5   |                              |   6  |  7   |  8   |   9  |  0   |        |
- //|--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- //|        |      |      |      |      |      |                              |   -  |  4   |  5   |   6  |  ,   |        |
- //|--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- //|        |      |      |      |      |      |      |      |  |      |      |   +  |  1   |  2   |   3  |  .   |        |
- //`----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- //                       |      |      |      |      |      |  |      |   0  |      |      |      |
- //                       `----------------------------------'  `----------------------------------'
- //
+//        numbers_layer {
+//,-------------------------------------------.                              ,-------------------------------------------.
+//|        |  1   |  2   |  3   |  4   |  5   |                              |   6  |  7   |  8   |   9  |  0   |        |
+//|--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+//|        |      |      |      |      |      |                              |   -  |  4   |  5   |   6  |  ,   |        |
+//|--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+//|        |      |      |      |      |      |      |      |  |      |      |   +  |  1   |  2   |   3  |  .   |        |
+//`----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+//                       |      |      |      |      |      |  |      |   0  |      |      |      |
+//                       `----------------------------------'  `----------------------------------'
+//
             bindings = <
     &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                          &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
     &trans &trans &trans &trans &trans &trans                                          &kp KP_MINUS &kp N4 &kp N5 &kp N6 &kp COMMA &kp SE_STAR
@@ -70,32 +67,5 @@
                          &trans &trans &trans &trans &trans              &trans       &kp N0 &trans &trans &trans
             >;
         };
-        nav_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// | ---  | Tab-| Tab+| win+ | win- | excel|                                          | Pgup | Home |  Up   | End  | ScrUp | ---  |
-// | ---  | Win | Shft| alt  | ctrl | app  |                                          | Pgdw | Left |  Down | Right| ScrDn | ---  |
-// | ---  | --- | F2  | F3   | F5   | excel|   ---   |  ---    |  |   ---   |  ---    |      | Predk| ---   | NxDk |   -   |---   |
-//                    | ENC  | ---  | ---  |   ---   |  ---    |  |   ---   |  ---    | ---  | ---  | ---   |
-            bindings = <
-	&trans &kp PTAB &kp NTAB  &kp PWIN &kp NWIN  &trans                                &kp PG_UP &kp HOME &kp UP   &kp END   &kp K_SCROLL_UP &trans
-	&trans &kp LGUI &kp LSHFT &kp LALT &kp LCTRL &kp K_APP                             &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp K_SCROLL_DOWN &trans
-	&trans &trans   &kp F2    &kp F3   &kp F5    &trans &trans &trans  &trans &trans &trans   &trans &trans   &trans &trans &trans
-	                       &trans  &trans   &trans        &trans &trans  &trans &trans    &trans    &none     &trans
-			>;
-		};
-        sys_layer {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// | ---  | Tab-| Tab+| win+ | win- | excel|                                          | Pgup | Home |  Up   | End  | ScrUp | ---  |
-// | ---  | Win | Shft| alt  | ctrl | app  |                                          | Pgdw | Left |  Down | Right| ScrDn | ---  |
-// | ---  | --- | F2  | F3   | F5   | excel|   ---   |  ---    |  |   ---   |  ---    |      | Predk| ---   | NxDk |   -   |---   |
-//                    | ENC  | ---  | ---  |   ---   |  ---    |  |   ---   |  ---    | ---  | ---  | ---   |
-            bindings = <
-	&trans &kp PTAB &kp NTAB  &kp PWIN &kp NWIN  &trans                                &kp PG_UP &kp HOME &kp UP   &kp END   &kp K_SCROLL_UP &trans
-	&trans &kp LGUI &kp LSHFT &kp LALT &kp LCTRL &kp K_APP                             &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp K_SCROLL_DOWN &trans
-	&trans &trans   &kp F2    &kp F3   &kp F5    &trans &trans &trans  &trans &trans &trans   &trans &trans   &trans &trans &trans
-	                       &trans  &trans   &trans        &trans &trans  &trans &trans    &trans    &none     &trans
-			>;
-		};
-
 	};
 };
