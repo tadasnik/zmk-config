@@ -3,15 +3,13 @@
  *
  * SPDX-License-Identifier: MIT
  */
+
 #define DEFAULT 0
 #define SYM   1
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/ext_power.h>
 
 / {
     keymap {
@@ -23,7 +21,6 @@
 // | TAB |  A  |  R  |  S  |  T  |  G  |                            |  M  |  N  |  E  |  I  |  O  |  '  |
 // | SFT |  Z  |  X  |  C  |  D  |  V  |  ESC  | SPC |  | RET | GUI |  K  |  H  |  ,  |  .  |  /  | CTR |
 //                   |     | TAB | CTR |  SFT  | SPC |  | RET | BSP | DEL | ALT |     |
-dlfkjdfljdfj`
             label = "Default";
 
             bindings = <
