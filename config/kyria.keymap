@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 #define DEFAULT 0
-#define LOWER   1
+#define SYM     1
 #define RAISE   2
 #define UTIL    3
 
@@ -23,32 +23,32 @@
 // | ESC |  Q  |  W  |  F  |  P  |  B  |                            |  J  |  L  |  U  |  Y  |  ;  |  \  |
 // | TAB |  A  |  R  |  S  |  T  |  G  |                            |  M  |  N  |  E  |  I  |  O  |  '  |
 // | SFT |  Z  |  X  |  C  |  D  |  V  |  ESC  | SPC |  | RET | GUI |  K  |  H  |  ,  |  .  |  /  | CTR |
-//                   | MUT | TAB | CTR |  SFT  | SPC |  | RET | BSP | DEL | ALT |     |
+//                   | CTR | TAB | CTR |  SFT  | SPC |  | RET | BSP | DEL | ALT |     |
 
             label = "Default";
 
             bindings = <
-    &gresc    &kp Q      &kp W      &kp F       &kp P       &kp B                                                                    &kp J   &kp L       &kp U       &kp Y      &kp SEMI      &kp BSLH
-    &kp TAB   &mt LGUI A &mt LALT R &mt LSHFT S &mt LCTRL T &kp G                                                                    &kp M   &mt LCTRL N &mt LSHFT E &mt LALT I &mt LGUI O    &kp SQT
-    &kp LSHFT &kp Z      &kp X      &kp C       &kp D       &kp V         &gresc        &lt LOWER SPACE  &lt RAISE RET &kp LGUI      &kp K   &kp H       &kp COMMA   &kp DOT    &lt UTIL FSLH &kp RCTRL
-                                    &kp C_MUTE  &kp TAB     &mt LCTRL ESC &mt LSHFT TAB &lt LOWER SPACE  &lt RAISE RET &mt RALT BSPC &kp DEL &kp LALT    &kp C_PP 
+    &gresc    &kp Q &kp W &kp F   &kp P    &kp B                                                                    &kp J   &kp L       &kp U       &kp Y      &kp SEMI      &kp BSLH
+    &kp TAB   &kp A &kp R &kp S   &kp T    &kp G                                                                    &kp M   &kp N &kp E &kp I &kp O    &kp SQT
+    &kp LSHFT &kp Z &kp X &kp C   &kp D    &kp V            &gresc      &lt SYM SPACE  &lt RAISE RET &kp LGUI      &kp K   &kp H       &kp COMMA   &kp DOT    &lt UTIL FSLH &kp RCTRL
+                        &kp LCTRL &kp LALT &mt LSHIFT SPACE &lt SYM RET &lt SYM SPACE  &lt RAISE RET &mt RALT BSPC &kp DEL &kp LALT    &kp C_PP 
             >;
         };
 
-        modifier_layer { // keys on each side compliment each other in some way
+        sym_layer { // keys on each side compliment each other in some way
 // ------------------------------------------ MODIFIER LAYER -------------------------------------------
 // | ESC |  <  |  [  |  {  |  (  |  /  |                           |  \  |  )  |  }  |  ]  |  >  |  \  |
 // | TAB |  #  |  *  |  +  |  _  |  @  |                           |  &  |  -  |  =  |  ^  |  $  |  '  |
 // | SFT |  %  |  !  |  `  |  :  |  '  | ESC |     |  | RET |  GUI |  "  |  ;  |  ~  |  ?  |  |  | CTR |
 //                   | MUT | TAB | CTR | SFT |     |  | RET |  BSP | DEL | ALT |     |
 
-            label = "Modifier";
+            label = "Symbols";
 
             bindings = <
     &gresc    &kp LT    &kp LBKT  &kp LBRC   &kp LPAR  &kp FSLH                                                  &kp BSLH &kp RPAR  &kp RBRC  &kp RBKT  &kp GT   &kp BSLH
     &kp TAB   &kp HASH  &kp STAR  &kp PLUS   &kp UNDER &kp AT                                                    &kp AMPS &kp MINUS &kp EQUAL &kp CARET &kp DLLR &kp SQT
-    &kp LSHFT &kp PRCNT &kp EXCL  &kp GRAVE  &kp COLON &kp APOS  &gresc  &lt LOWER SPACE  &lt RAISE RET &kp LGUI &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &kp RCTRL
-                                  &kp C_MUTE &kp TAB   &kp LCTRL &kp TAB &lt LOWER SPACE  &lt RAISE RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
+    &kp LSHFT &kp PRCNT &kp EXCL  &kp GRAVE  &kp COLON &kp APOS  &gresc  &lt SYM SPACE  &lt RAISE RET &kp LGUI &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &kp RCTRL
+                                  &kp C_MUTE &kp TAB   &kp LCTRL &kp TAB &lt SYM SPACE  &lt RAISE RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
             >;
         };
 
@@ -64,8 +64,8 @@
             bindings = <
     &gresc    &gresc   &kp N7 &kp N8    &kp N9  &kp DOT                                          &kp DOWN &kp RIGHT &none     &none   &none  &kp BSLH
     &kp TAB   &kp TAB  &kp N4 &kp N5    &kp N6  &kp N0                                           &kp HOME &kp PG_DN &kp PG_UP &kp END &none  &kp SQT
-    &kp LSHFT &kp CAPS &kp N1 &kp N2    &kp N3  &kp COMMA &gresc  &lt LOWER SPACE  &lt RAISE RET &kp LGUI &kp UP   &kp LEFT  &none     &none   &none  &kp RCTRL
-                             &kp C_MUTE &kp TAB &kp LCTRL &kp TAB &lt LOWER SPACE  &lt RAISE RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
+    &kp LSHFT &kp CAPS &kp N1 &kp N2    &kp N3  &kp COMMA &gresc  &lt SYM SPACE  &lt RAISE RET &kp LGUI &kp UP   &kp LEFT  &none     &none   &none  &kp RCTRL
+                             &kp C_MUTE &kp TAB &kp LCTRL &kp TAB &lt SYM SPACE  &lt RAISE RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
             >;
         };
 
@@ -81,8 +81,8 @@
             bindings = <
     &kp F1          &kp F2           &kp F3          &kp F4           &kp F5            &kp F6                                                                       &kp F7            &kp F8       &kp F9       &kp F10      &kp F11      &kp F12
     &trans &trans  &trans &trans  &trans   &trans                                                              &bt BT_SEL 0      &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
-    &trans &trans  &trans &trans  &trans   &ext_power EP_TOG &gresc        &lt LOWER SPACE  &lt RAISE RET &kp LGUI      &ext_power EP_TOG &bt BT_NXT   &bt BT_PRV   &bt BT_CLR   &trans       &out OUT_TOG
-                                                     &kp C_MUTE       &kp TAB           &kp LCTRL         &mt LSHFT TAB &lt LOWER SPACE  &lt RAISE RET &mt RALT BSPC &kp DEL           &kp LALT     &kp C_PP
+    &trans &trans  &trans &trans  &trans   &ext_power EP_TOG &gresc        &lt SYM SPACE  &lt RAISE RET &kp LGUI      &ext_power EP_TOG &bt BT_NXT   &bt BT_PRV   &bt BT_CLR   &trans       &out OUT_TOG
+                                                     &kp C_MUTE       &kp TAB           &kp LCTRL         &mt LSHFT TAB &lt SYM SPACE  &lt RAISE RET &mt RALT BSPC &kp DEL           &kp LALT     &kp C_PP
             >;
         };          
     };
