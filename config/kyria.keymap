@@ -15,56 +15,6 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-// left
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <2 3>;
-            bindings = <&kp ESC>;
-        };
-
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <3 4>;
-            bindings = <&kp TAB>;
-        };
-
-        combo_cut {
-            timeout-ms = <50>;
-            key-positions = <25 26>;
-            bindings = <&kp K_CUT>;
-        };
-
-        combo_copy {
-            timeout-ms = <50>;
-            key-positions = <26 27>;
-            bindings = <&kp K_COPY>;
-        };
-
-        combo_paste {
-            timeout-ms = <50>;
-            key-positions = <27 28>;
-            bindings = <&kp K_PASTE>;
-        };
-
-// right
-        combo_bspc {
-            timeout-ms = <50>;
-            key-positions = <31 32>;
-            bindings = <&kp BSPC>;
-        };
-
-        combo_del {
-            timeout-ms = <50>;
-            key-positions = <32 33>;
-            bindings = <&kp DEL>;
-        };
-    };
-};
-
-/ {
     keymap {
         compatible = "zmk,keymap";
 
