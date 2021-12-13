@@ -24,14 +24,16 @@
             label = "Default";
 
             bindings = <
-    &gresc    &kp Q &kp W &kp F  &kp P   &kp B                                                      &kp J           &kp L     &kp U     &kp Y   &kp SEMI &kp BSLH
+    &kp ESC   &kp Q &kp W &kp F  &kp P   &kp B                                                      &kp J           &kp L     &kp U     &kp Y   &kp SEMI &kp BSLH
     &kp TAB   &kp A &kp R &kp S  &kp T   &kp G                                                      &kp M           &kp N     &kp E     &kp I   &kp O    &kp SQT
-    &kp LSHFT &kp Z &kp X &kp C  &kp D   &kp V           &gresc        &mo SYM &kp RET &kp LGUI     &kp K           &kp H     &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+    &kp LSHFT &kp Z &kp X &kp C  &kp D   &kp V           &kp ESC       &mo SYM &kp RET &kp LGUI     &kp K           &kp H     &kp COMMA &kp DOT &kp FSLH &kp RCTRL
                           &trans &kp TAB &mt LCTRL SPACE &mt LSHFT RET &mo SYM &kp RET &mt RALT RET &mt SHIFT SPACE &kp RCTRL &trans
             >;
         };
 
-        sym_layer { // keys on each side compliment each other in some way
+        sym_layer {
+
+// keys on each side compliment each other in some way
 // ------------------------------------------ MODIFIER LAYER -------------------------------------------
 // | ESC |  <  |  [  |  {  |  (  |  /  |                           |  \  |  )  |  }  |  ]  |  >  |  \  |
 // | TAB |  #  |  *  |  +  |  _  |  @  |                           |  &  |  -  |  =  |  ^  |  $  |  '  |
@@ -41,10 +43,10 @@
             label = "symbols";
 
             bindings = <
-    &gresc    &kp LT    &kp LBKT  &kp LBRC   &kp LPAR  &kp FSLH                                                  &kp BSLH &kp RPAR  &kp RBRC  &kp RBKT  &kp GT   &kp BSLH
+    &kp ESC    &kp LT   &kp LBKT  &kp LBRC   &kp LPAR  &kp FSLH                                                  &kp BSLH &kp RPAR  &kp RBRC  &kp RBKT  &kp GT   &kp BSLH
     &kp TAB   &kp HASH  &kp STAR  &kp PLUS   &kp UNDER &kp AT                                                    &kp AMPS &kp MINUS &kp EQUAL &kp CARET &kp DLLR &kp SQT
-    &kp LSHFT &kp PRCNT &kp EXCL  &kp GRAVE  &kp COSYM &kp APOS  &gresc  &lt SYM SPACE  &lt RAISE RET &kp LGUI &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &kp RCTRL
-                                  &kp C_MUTE &kp TAB   &kp LCTRL &kp TAB &lt SYM SPACE  &lt RAISE RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
+    &kp LSHFT &kp PRCNT &kp EXCL  &kp GRAVE  &kp COSYM &kp APOS  &kp ESC &lt SYM SPACE  &lt RAISE RET &kp LGUI &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &kp RCTRL
+                                  &kp ESC    &kp TAB   &kp LCTRL &kp TAB &lt SYM SPACE  &lt RAISE RET &kp BSPC &kp DEL  &kp LALT  &kp ESC 
             >;
         };
     };
