@@ -5,7 +5,7 @@
  */
 #define DEFAULT 0
 #define SYM     1
-#define RAISE   2
+#define RAISE   3
 #define UTIL    3
 
 #include <behaviors.dtsi>
@@ -20,18 +20,18 @@
 
         default_layer {
 // --------------------------------------------- Colemak - DH -------------------------------------------
-// | ESC |  Q  |  W  |  F  |  P  |  B  |                            |  J  |  L  |  U  |  Y  |  ;  |  \  |
-// | TAB |  A  |  R  |  S  |  T  |  G  |                            |  M  |  N  |  E  |  I  |  O  |  '  |
-// | SFT |  Z  |  X  |  C  |  D  |  V  |  ESC  | SPC |  | RET | GUI |  K  |  H  |  ,  |  .  |  /  | CTR |
-//                   | CTR | TAB | CTR |  SFT  | SPC |  | RET | BSP | DEL | ALT |     |
+// | ESC |  Q  |  W  |  F  |  P  |  B  |                             |  J  |  L  |  U  |  Y  |  ;  |  \  |
+// | TAB |  A  |  R  |  S  |  T  |  G  |                             |  M  |  N  |  E  |  I  |  O  |  '  |
+// | SFT |  Z  |  X  |  C  |  D  |  V  |  BSPC  | SPC |  | RET | DEL |  K  |  H  |  ,  |  .  |  /  | CTR |
+//                   | CTR | TAB | CTR |  SFT   | SPC |  | RET | BSP | DEL | ALT |     |
 
             label = "Default";
 
             bindings = <
     &gresc    &kp Q &kp W &kp F   &kp P    &kp B                                                                    &kp J   &kp L       &kp U       &kp Y      &kp SEMI      &kp BSLH
-    &kp TAB   &kp A &kp R &kp S   &kp T    &kp G                                                                    &kp M   &kp N &kp E &kp I &kp O    &kp SQT
-    &kp LSHFT &kp Z &kp X &kp C   &kp D    &kp V            &gresc      &lt SYM SPACE  &lt RAISE RET &kp LGUI      &kp K   &kp H       &kp COMMA   &kp DOT    &lt UTIL FSLH &kp RCTRL
-                        &kp LCTRL &kp LALT &mt LSHIFT SPACE &lt SYM RET &lt SYM SPACE  &lt RAISE RET &mt RALT BSPC &kp DEL &kp LALT    &kp C_PP 
+    &kp TAB   &kp A &kp R &kp S   &mt LSHFT T    &kp G                                                                    &kp M   &mt RSHIFT N &kp E &kp I &kp O    &kp SQT
+    &kp LSHFT &kp Z &kp X &kp C   &kp D    &kp V          &kp BSPC    &lt SYM SPACE  &lt RAISE RET &kp DEL      &kp K   &kp H       &kp COMMA   &kp DOT    &lt UTIL FSLH &kp RCTRL
+                        &kp LCTRL &kp LALT &mt LSHIFT RET &lt SYM RET &lt SYM SPACE  &lt RAISE RET &mt RALT BSPC &kp DEL &kp LALT    &kp C_PP 
             >;
         };
 
