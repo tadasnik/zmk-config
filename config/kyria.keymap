@@ -4,32 +4,31 @@
  * SPDX-License-Identifier: MIT
  */
 
+
 #define DEFAULT 0
-#define SYM   1
+#define SYM     1
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 
 / {
-    keymap {
-        compatible = "zmk,keymap";
+	keymap {
+		compatible = "zmk,keymap";
 
-        default_layer {
-// --------------------------------------------- Colemak - DH -------------------------------------------
-// | ESC |  Q  |  W  |  F  |  P  |  B  |                            |  J  |  L  |  U  |  Y  |  ;  |  \  |
-// | TAB |  A  |  R  |  S  |  T  |  G  |                            |  M  |  N  |  E  |  I  |  O  |  '  |
-// | SFT |  Z  |  X  |  C  |  D  |  V  |  ESC  | SPC |  | RET | GUI |  K  |  H  |  ,  |  .  |  /  | CTR |
-//                   |     | TAB | CTR |  SFT  | SPC |  | RET | BSP | DEL | ALT |     |
-            label = "Default";
-
-            bindings = <
-    &kp ESC   &kp Q &kp W &kp F  &kp P   &kp B                                                      &kp J           &kp L     &kp U     &kp Y   &kp SEMI &kp BSLH
-    &kp TAB   &kp A &kp R &kp S  &kp T   &kp G                                                      &kp M           &kp N     &kp E     &kp I   &kp O    &kp SQT
-    &kp LSHFT &kp Z &kp X &kp C  &kp D   &kp V           &kp ESC       &mo SYM &kp RET &kp LGUI     &kp K           &kp H     &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-                          &trans &kp TAB &mt LCTRL SPACE &mt LSHFT RET &mo SYM &kp RET &mt RALT RET &mt SHIFT SPACE &kp RCTRL &trans
-            >;
-        };
+		default_layer {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |  ESC  |  Q  |  W  |  F   |  P   |  B   |                                          |  J   |  L    |  U    |  Y   |   ;   |   =  |
+// |  TAB  |  A  |  R  |  S   |  T   |  G   |                                          |  M   |  N    |  E    |  I   |   O   | SHIFT |
+// | SHIFT |  Z  |  X  |  C   |  D   |  V   | L SHIFT |   SYM   |  | L SHIFT | L SHIFT |  K   |  H    |  ,    |  .   |   /   | CTRL |
+//                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
+			bindings = <
+	&kp ESC   &kp Q &kp W &kp F &kp P &kp B                                                &kp J &kp L  &kp U     &kp Y   &kp SEMI    &kp EQUAL
+	&kp TAB   &kp A &kp R &kp S &kp T &kp G                                                &kp M &kp N  &kp E     &kp I   &kp O &kp RSHIFT
+	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &mo SYM        &kp LSHFT &kp LSHFT &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+	                 &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
+			>;
+		};
 
         sym_layer {
 
