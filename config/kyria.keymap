@@ -15,6 +15,56 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+// left
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp ESC>;
+        };
+
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&kp TAB>;
+        };
+
+        combo_cut {
+            timeout-ms = <50>;
+            key-positions = <25 26>;
+            bindings = <&kp K_CUT>;
+        };
+
+        combo_copy {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&kp K_COPY>;
+        };
+
+        combo_paste {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&kp K_PASTE>;
+        };
+
+// right
+        combo_bspc {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
+            bindings = <&kp BSPC>;
+        };
+
+        combo_del {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&kp DEL>;
+        };
+    };
+};
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -33,8 +83,6 @@
     &kp LSHFT &kp Z      &kp X      &kp C       &kp D       &kp V         &gresc        &lt LOWER SPACE  &lt RAISE RET &kp LGUI      &kp K   &kp H       &kp COMMA   &kp DOT    &lt UTIL FSLH &kp RCTRL
                                     &kp C_MUTE  &kp TAB     &mt LCTRL ESC &mt LSHFT TAB &lt LOWER SPACE  &lt RAISE RET &mt RALT BSPC &kp DEL &kp LALT    &kp C_PP 
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
 
         modifier_layer { // keys on each side compliment each other in some way
@@ -52,8 +100,6 @@
     &kp LSHFT &kp PRCNT &kp EXCL  &kp GRAVE  &kp COLON &kp APOS  &gresc  &lt LOWER SPACE  &lt RAISE RET &kp LGUI &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &kp RCTRL
                                   &kp C_MUTE &kp TAB   &kp LCTRL &kp TAB &lt LOWER SPACE  &lt RAISE RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
 
         number_layer {
@@ -71,8 +117,6 @@
     &kp LSHFT &kp CAPS &kp N1 &kp N2    &kp N3  &kp COMMA &gresc  &lt LOWER SPACE  &lt RAISE RET &kp LGUI &kp UP   &kp LEFT  &none     &none   &none  &kp RCTRL
                              &kp C_MUTE &kp TAB &kp LCTRL &kp TAB &lt LOWER SPACE  &lt RAISE RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
 
         utility_layer {
@@ -86,12 +130,10 @@
 
             bindings = <
     &kp F1          &kp F2           &kp F3          &kp F4           &kp F5            &kp F6                                                                       &kp F7            &kp F8       &kp F9       &kp F10      &kp F11      &kp F12
-    &rgb_ug RGB_EFF &rgb_ug RGB_SPI  &rgb_ug RGB_BRI &rgb_ug RGB_SAI  &rgb_ug RGB_HUI   &rgb_ug RGB_TOG                                                              &bt BT_SEL 0      &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
-    &rgb_ug RGB_EFR &rgb_ug RGB_SPD  &rgb_ug RGB_BRD &rgb_ug RGB_SAD  &rgb_ug RGB_HUD   &ext_power EP_TOG &gresc        &lt LOWER SPACE  &lt RAISE RET &kp LGUI      &ext_power EP_TOG &bt BT_NXT   &bt BT_PRV   &bt BT_CLR   &trans       &out OUT_TOG
+    &trans &trans  &trans &trans  &trans   &trans                                                              &bt BT_SEL 0      &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
+    &trans &trans  &trans &trans  &trans   &ext_power EP_TOG &gresc        &lt LOWER SPACE  &lt RAISE RET &kp LGUI      &ext_power EP_TOG &bt BT_NXT   &bt BT_PRV   &bt BT_CLR   &trans       &out OUT_TOG
                                                      &kp C_MUTE       &kp TAB           &kp LCTRL         &mt LSHFT TAB &lt LOWER SPACE  &lt RAISE RET &mt RALT BSPC &kp DEL           &kp LALT     &kp C_PP
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };          
     };
 };
