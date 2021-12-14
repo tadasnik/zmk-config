@@ -17,7 +17,7 @@
 
 / {
     behaviors {
-        lpht: positional_hold_tap {
+        rpht: positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "POSITIONAL_HOLD_TAP";
             #binding-cells = <2>;
@@ -27,7 +27,7 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <1 2 3 4 5 12 13 14 15 17 16 24 25 26 27 28 29>;    // <---[[the W key]]
         };
-        rpht: positional_hold_tap {
+        lpht: positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "POSITIONAL_HOLD_TAP";
             #binding-cells = <2>;
@@ -55,7 +55,7 @@
     &gresc    &kp Q &kp W &kp F   &kp P    &kp B                                                                    &kp J   &kp L       &kp U       &kp Y      &kp SEMI      &kp BSPC
     &kp TAB   &kp A &kp R &lpht LSHIFT S   &kp T    &kp G                                                                    &kp M   &kp N &rpht RSHIFT E &kp I &kp O    &kp RSHIFT
     &kp LSHFT &kp Z &kp X &kp C   &kp D    &kp V          &kp BSPC    &lt SYM SPACE  &lt NUM RET &kp DEL      &kp K   &kp H       &kp COMMA   &kp DOT    &lt UTIL FSLH &kp SQT
-                        &kp LCTRL &mo NUM &lt SYM SPACE &kp LALT &lt SYM SPACE  &mo NUM &lt RALT RET &lt NUM SPACE &kp RSHIFT &kp RCTRL 
+                        &kp LCTRL &mo NUM &lt NUM SPACE &kp LALT &lt SYM SPACE  &mo NUM &lt SYM RET &lt NUM SPACE &kp RSHIFT &kp RCTRL 
             >;
         };
 
@@ -69,7 +69,7 @@
             label = "Symbols";
 
             bindings = <
-    &gresc    &kp LT    &kp LBKT  &kp LBRC   &kp LPAR  &kp FSLH                                                  &kp BSLH &kp RPAR  &kp RBRC  &kp RBKT  &kp GT   &kp DEL
+    &kp CARET &kp LT    &kp LBKT  &kp LBRC   &kp LPAR  &kp FSLH                                                  &kp BSLH &kp RPAR  &kp RBRC  &kp RBKT  &kp GT   &kp DEL
     &kp TAB   &kp HASH  &kp STAR  &kp PLUS   &kp UNDER &kp AT                                                    &kp AMPS &kp MINUS &kp EQUAL &kp CARET &kp DLLR &kp SQT
     &kp LSHFT &kp PRCNT &kp EXCL  &kp GRAVE  &kp COLON &kp APOS  &gresc  &lt SYM SPACE  &lt NUM RET &kp LGUI &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &kp RCTRL
                                   &kp C_MUTE &kp TAB   &kp LCTRL &kp TAB &lt SYM SPACE  &lt NUM RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
@@ -86,10 +86,10 @@
             label = "Number";
 
             bindings = <
-    &gresc    &gresc   &kp N7 &kp N8    &kp N9  &kp DOT                                          &kp DOWN &kp RIGHT &none     &none   &none  &kp DEL
-    &kp TAB   &kp TAB  &kp N4 &kp N5    &kp N6  &kp N0                                           &kp LEFT &kp LEFT &kp UP &kp DOWN &kp RIGHT  &kp SQT
-    &kp LSHFT &kp CAPS &kp N1 &kp N2    &kp N3  &kp COMMA &gresc  &lt SYM SPACE  &lt NUM RET &kp LGUI &kp UP   &kp LEFT  &none     &none   &none  &kp RCTRL
-                             &kp C_MUTE &kp TAB &kp LCTRL &kp TAB &lt SYM SPACE  &lt NUM RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
+    &gresc    &gresc   &kp N7 &kp N8    &kp N9  &kp PLUS                                          &kp DOWN &kp RIGHT &none     &none   &none  &kp DEL
+    &kp TAB   &kp TAB  &kp N4 &kp N5    &kp N6  &kp EQUAL                                           &kp LEFT &kp LEFT &kp UP &kp DOWN &kp RIGHT  &kp SQT
+    &kp LSHFT &kp CAPS &kp N1 &kp N2    &kp N3  &kp MINUS &gresc  &lt SYM SPACE  &lt NUM RET &kp LGUI &kp UP   &kp LEFT  &none     &none   &none  &kp RCTRL
+                             &kp C_MUTE &kp TAB &kp N0 &kp TAB &lt SYM SPACE  &lt NUM RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
             >;
         };
 
