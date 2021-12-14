@@ -53,7 +53,7 @@
 
             bindings = <
     &gresc    &kp Q &kp W &kp F   &kp P    &kp B                                                                    &kp J   &kp L       &kp U       &kp Y      &kp SEMI      &kp BSPC
-    &kp TAB   &kp A &kp R &lpht LSHIFT S   &kp T    &kp G                                                                    &kp M   &kp N &rpht RSHIFT E &kp I &kp O    &kp RSHIFT
+    &kp TAB   &kp A &kp R &lpht LSHIFT S   &kp T    &kp G                                                                    &kp M   &kp N &lpht RSHIFT E &kp I &kp O    &kp RSHIFT
     &kp LSHFT &kp Z &kp X &kp C   &kp D    &kp V          &kp BSPC    &lt SYM SPACE  &lt NUM RET &kp DEL      &kp K   &kp H       &kp COMMA   &kp DOT    &lt UTIL FSLH &kp SQT
                         &kp LCTRL &mo NUM &lt NUM SPACE &kp LALT &lt SYM SPACE  &mo NUM &lt SYM RET &lt NUM SPACE &kp RSHIFT &kp RCTRL 
             >;
