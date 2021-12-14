@@ -58,7 +58,7 @@
             >;
         };
 
-        sym_layer { // keys on each side compliment each other in some way
+        sym_layer {
 // ------------------------------------------ MODIFIER LAYER -------------------------------------------
 // | ESC |  <  |  [  |  {  |  (  |  /  |                           |  \  |  )  |  }  |  ]  |  >  | DEL  |
 // | TAB |  #  |  *  |  +  |  _  |  @  |                           |  &  |  -  |  =  |  ^  |  $  |  '  |
@@ -68,10 +68,10 @@
             label = "Symbols";
 
             bindings = <
-    &kp CARET &kp LT    &kp LBKT  &kp LBRC   &kp LPAR  &kp FSLH                                                  &kp BSLH &kp RPAR  &kp RBRC  &kp RBKT  &kp GT   &kp DEL
-    &kp TAB   &kp HASH  &kp STAR  &kp PLUS   &kp UNDER &kp AT                                                    &kp AMPS &kp MINUS &kp EQUAL &kp CARET &kp DLLR &kp SQT
-    &kp LSHFT &kp PRCNT &kp EXCL  &kp GRAVE  &kp COLON &kp APOS  &gresc  &lt SYM SPACE  &lt NUM RET &kp LGUI &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &kp RCTRL
-                                  &kp C_MUTE &kp TAB   &kp LCTRL &kp TAB &lt SYM SPACE  &lt NUM RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
+    &kp CARET &kp EXCL  &kp AMPS  &kp LBRC &kp RBRC &kp AT                                      &trans &trans   &trans &trans   &trans    &trans
+    &kp GRAVE &kp PRCNT &kp COLON &kp LPAR &kp RPAR &kp HASH                                    &trans &kp LEFT &kp UP &kp DOWN &kp RIGHT &trans
+    &kp DLLR  &kp PIPE  &kp SEMI  &kp LBKT &kp RBKT &kp STAR &kp TILDE  &kp FSLH  &trans &trans &trans &trans   &trans &trans   &trans    &trans
+                                  &trans   &trans   &trans   &kp UNDER  &kp BSLH  &trans &tranr &trans &trans   &trans
             >;
         };
 
