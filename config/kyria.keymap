@@ -68,10 +68,10 @@
             label = "Symbols";
 
             bindings = <
-    &kp CARET &kp EXCL  &kp AMPS  &kp LBRC &kp RBRC &kp AT                                      &trans &trans   &trans &trans   &trans    &trans
-    &kp GRAVE &kp PRCNT &kp COLON &kp LPAR &kp RPAR &kp HASH                                    &trans &kp LEFT &kp UP &kp DOWN &kp RIGHT &trans
-    &kp DLLR  &kp PIPE  &kp SEMI  &kp LBKT &kp RBKT &kp STAR &kp TILDE  &kp FSLH  &trans &trans &trans &trans   &trans &trans   &trans    &trans
-                                  &trans   &trans   &trans   &kp UNDER  &kp BSLH  &trans &tranr &trans &trans   &trans
+    &kp CARET &kp EXCL  &kp AMPS  &kp LBRC &kp RBRC &kp AT                                                 &kp BSLH &kp RPAR  &kp RBRC  &kp RBKT  &kp GT   &kp DEL
+    &kp GRAVE &kp PRCNT &kp COLON &kp LPAR &kp RPAR &kp HASH                                               &kp AMPS &kp MINUS &kp EQUAL &kp CARET &kp DLLR &kp SQT
+    &kp DLLR  &kp PIPE  &kp SEMI  &kp LBKT &kp RBKT &kp STAR &kp TILDE  &kp FSLH  &lt NUM RET &kp LGUI &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &kp RCTRL  
+                                  &trans   &trans   &trans   &kp UNDER  &kp BSLH  &lt NUM RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP                                
             >;
         };
 
