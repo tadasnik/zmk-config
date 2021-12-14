@@ -17,7 +17,7 @@
 
 / {
     behaviors {
-        rpht: positional_hold_tap {
+        rpht: rightpositional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "POSITIONAL_HOLD_TAPR";
             #binding-cells = <2>;
@@ -27,7 +27,7 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <1 2 3 4 5 12 13 14 15 17 16 24 25 26 27 28 29>;    // <---[[the W key]]
         };
-        lpht: positional_hold_tap {
+        lpht: leftpositional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "POSITIONAL_HOLD_TAPL";
             #binding-cells = <2>;
