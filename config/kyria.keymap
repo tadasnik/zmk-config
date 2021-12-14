@@ -16,10 +16,6 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
-#include <dt-bindings/zmk/keys.h>
-#include <behaviors.dtsi>
-
-/ {
     behaviors {
         lpht: positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
