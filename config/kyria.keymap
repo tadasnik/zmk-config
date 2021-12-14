@@ -25,7 +25,7 @@
             tapping-term-ms = <400>;
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <1 2 3 4 5 12 13 14 15 17 16 24 25 26 27 28 29>;
+            hold-trigger-key-positions = <1 2 3 4 5 12 13 14 15 17 16 24 25 26 27 28 29>;    // <---[[the W key]]
         };
         lpht: leftpositional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -51,14 +51,14 @@
             label = "Default";
 
             bindings = <
-    &gresc  &kp Q &kp W &kp F          &kp P        &kp B                                       &kp J         &kp L        &kp U          &kp Y   &kp APOS &kp BSPC
-    &kp TAB &kp A &kp R &lpht LSHIFT S &kp T        &kp G                                       &kp M         &kp N        &rpht RSHIFT E &kp I   &kp O    &trans
-    &trans  &kp Z &kp X &kp C          &kp D        &kp V   &trans   &trans  &trans &trans      &kp K         &kp H        &kp COMMA      &kp DOT &kp FSLH &kp UNDER
-                        &kp LCTRL      &caps_word   &mo NUM &kp LALT &mo SYM &trans &lt SYM RET &lt NUM SPACE &kp RSHIFT   &trans 
+    &gresc    &kp Q &kp W &kp F   &kp P    &kp B                                                                    &kp J   &kp L       &kp U       &kp Y      &kp SEMI      &kp BSPC
+    &kp TAB   &kp A &kp R &lpht LSHIFT S   &kp T    &kp G                                                                    &kp M   &kp N &rpht RSHIFT E &kp I &kp O    &kp RSHIFT
+    &kp LSHFT &kp Z &kp X &kp C   &kp D    &kp V          &kp BSPC    &lt SYM SPACE  &lt NUM RET &kp DEL      &kp K   &kp H       &kp COMMA   &kp DOT    &lt UTIL FSLH &kp SQT
+                        &kp LCTRL &mo NUM &lt NUM SPACE &kp LALT &lt SYM SPACE  &mo NUM &lt SYM RET &lt NUM SPACE &kp RSHIFT &kp RCTRL 
             >;
         };
 
-        sym_layer {
+        sym_layer { // keys on each side compliment each other in some way
 // ------------------------------------------ MODIFIER LAYER -------------------------------------------
 // | ESC |  <  |  [  |  {  |  (  |  /  |                           |  \  |  )  |  }  |  ]  |  >  | DEL  |
 // | TAB |  #  |  *  |  +  |  _  |  @  |                           |  &  |  -  |  =  |  ^  |  $  |  '  |
@@ -68,13 +68,12 @@
             label = "Symbols";
 
             bindings = <
-    &kp CARET &kp EXCL  &kp AMPS  &kp LBRC &kp RBRC &kp AT                                      &trans &trans   &trans &trans   &trans    &trans
-    &kp GRAVE &kp PRCNT &kp COLON &kp LPAR &kp RPAR &kp HASH                                    &trans &kp LEFT &kp UP &kp DOWN &kp RIGHT &trans
-    &kp DLLR  &kp PIPE  &kp SEMI  &kp LBKT &kp RBKT &kp STAR &kp TILDE  &kp FSLH  &trans &trans &trans &trans   &trans &trans   &trans    &trans
-                                  &trans   &trans   &trans   &kp UNDER  &kp BSLH  &trans &tranr &trans &trans   &trans
+    &kp CARET &kp LT    &kp LBKT  &kp LBRC   &kp LPAR  &kp FSLH                                                  &kp BSLH &kp RPAR  &kp RBRC  &kp RBKT  &kp GT   &kp DEL
+    &kp TAB   &kp HASH  &kp STAR  &kp PLUS   &kp UNDER &kp AT                                                    &kp AMPS &kp MINUS &kp EQUAL &kp CARET &kp DLLR &kp SQT
+    &kp LSHFT &kp PRCNT &kp EXCL  &kp GRAVE  &kp COLON &kp APOS  &gresc  &lt SYM SPACE  &lt NUM RET &kp LGUI &kp DQT  &kp SEMI  &kp TILDE &kp QMARK &kp PIPE &kp RCTRL
+                                  &kp C_MUTE &kp TAB   &kp LCTRL &kp TAB &lt SYM SPACE  &lt NUM RET &kp BSPC &kp DEL  &kp LALT  &kp C_PP
             >;
         };
-
 
         number_layer {
 // ------------------------------------------ NUMBER LAYER --------------------------------------------
