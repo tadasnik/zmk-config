@@ -37,7 +37,14 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35>;
         };
- 
+        mtp: behavior_mod_tap_permissive {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_TAP_PERMISSIVE";
+            tapping_term_ms = <TAPPING_TERM>;
+            flavor = "balanced";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -53,7 +60,7 @@
 
             bindings = <
     &gresc    &kp Q &kp W &kp F   &kp P    &kp B                                                                    &kp J   &kp L       &kp U       &kp Y      &kp SEMI      &kp BSPC
-    &kp TAB   &kp A &kp R &lpht LSHIFT S   &kp T    &kp G                                                                    &kp M   &kp N &lpht RSHIFT E &kp I &kp O    &kp RSHIFT
+    &kp TAB   &kp A &kp R &lpht LSHIFT S   &kp T    &kp G                                                                    &kp M   &kp N &mpt RSHIFT E &kp I &kp O    &kp RSHIFT
     &kp LSHFT &kp Z &kp X &kp C   &kp D    &kp V          &kp BSPC    &lt SYM SPACE  &lt NUM RET &kp DEL      &kp K   &kp H       &kp COMMA   &kp DOT    &lt UTIL FSLH &kp SQT
                         &kp LCTRL &mo NUM &lt NUM SPACE &kp LALT &lt SYM SPACE  &mo NUM &lt SYM RET &lt NUM SPACE &kp RSHIFT &kp RCTRL 
             >;
