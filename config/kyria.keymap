@@ -46,9 +46,9 @@
         default_layer {
 // --------------------------------------------- Colemak - DH -------------------------------------------
 // | ESC |  Q  |  W  |  F  |  P  |  B  |                             |  J  |  L  |  U  |  Y  |  '  | BSPC|
-// | CTR |  A  |  R  |  S  |  T  |  G  |                             |  M  |  N  |  E  |  I  |  O  | CTR |
+// | SHT |  A  |  R  |  S  |  T  |  G  |                             |  M  |  N  |  E  |  I  |  O  | SHT |
 // |     |  Z  |  X  |  C  |  D  |  V  |  TAB   |     |  |     |     |  K  |  H  |  ,  |  .  |  /  | _   |
-//                   | cap | SHT | NUM |  ALT   | SYM |  |     | RET | SPC | SHT |     |
+//                   | cap | CTR | NUM |  ALT   | SYM |  |     | RET | SPC | CTR |     |
 
             label = "Default";
 
