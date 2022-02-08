@@ -54,9 +54,9 @@
 
             bindings = <
     &gresc    &kp Q &kp W &kp F      &kp P      &kp B                                                    &kp J         &kp L      &kp U     &kp Y   &kp APOS &kp BSPC
-    &kp LCTRL &kp A &kp R &kp S      &kp T      &kp G                                                    &kp M         &kp N      &kp E     &kp I   &kp O    &kp RCTRL
+    &sk LSHIFT &kp A &kp R &kp S      &kp T      &kp G                                                    &kp M         &kp N      &kp E     &kp I   &kp O    &sk RSHIFT
     &trans    &kp Z &kp X &kp C      &kp D      &kp V         &kp TAB     &kp EQUAL &trans   &kp ESC     &kp K         &kp H      &kp COMMA &kp DOT &kp FSLH &kp UNDER
-                          &caps_word &sk LSHIFT &lt NUM SPACE &lt SYM RET &kp LALT  &kp RALT &lt SYM RET &lt NUM SPACE &sk RSHIFT &trans 
+                          &caps_word &sk LCTRL &lt NUM SPACE &lt SYM RET &kp LALT  &kp RALT &lt SYM RET &lt NUM SPACE &sk RCTRL &trans 
             >;
         };
 
