@@ -6,8 +6,7 @@
 #define DEFAULT 0
 #define SYM     1
 #define NUM     2
-#define NAV     3
-#define UTIL    4
+#define UTIL    3
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -56,7 +55,7 @@
     &gresc    &kp Q &kp W &kp E      &kp R      &kp T                                                    &kp Y         &kp U      &kp I     &kp O   &kp P &kp BSPC
     &sk LSHIFT &kp A &kp S &kp D      &kp F      &kp G                                                    &kp H         &kp J      &kp K    &kp L   &kp SEMICOLON &sk RSHIFT
     &trans    &kp Z &kp X &kp C      &kp V      &kp B         &kp TAB     &kp EQUAL &kp SQT   &kp ESC     &kp N         &kp M      &kp COMMA &kp DOT &kp FSLH &kp UNDER
-                          &caps_word &sk LCTRL &lt NUM SPACE &lt SYM RET &kp LALT  &kp RALT &lt SYM RET &lt NUM SPACE &sk RCTRL &mo UTIL 
+                          &caps_word &sk LCTRL &lt NUM SPACE &lt SYM RET &kp LALT  &kp RALT &lt SYM RET &lt NUM SPACE &sk RCTRL &lt UTIL 
             >;
         };
 
@@ -105,10 +104,10 @@
             label = "Utility";
 
             bindings = <
-    &kp F1          &kp F2           &kp F3          &kp F4           &kp F5            &kp F6                                                                       &kp F7            &kp F8       &kp F9       &kp F10      &kp F11      &kp F12
-    &trans &trans  &trans &trans  &trans   &trans                                                              &bt BT_SEL 0      &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
-    &trans &trans  &trans &trans  &trans   &ext_power EP_TOG &gresc        &lt SYM SPACE  &lt NUM RET &kp LGUI      &ext_power EP_TOG &bt BT_NXT   &bt BT_PRV   &bt BT_CLR   &trans       &out OUT_TOG
-                                                     &kp C_MUTE       &kp TAB           &kp LCTRL         &mt LSHFT TAB &lt SYM SPACE  &lt NUM RET &mt RALT BSPC &kp DEL           &kp LALT     &kp C_PP
+    &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6                             &kp F7       &kp F8       &kp F9       &kp F10      &kp F11      &kp F12
+    &trans &trans &trans &trans &trans &trans                             &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
+    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans       &bt BT_NXT   &bt BT_PRV   &bt BT_CLR   &trans       &trans
+                         &trans &trans &trans &trans &trans &trans &trans &trats       &trans       &trans
             >;
         };          
     };
