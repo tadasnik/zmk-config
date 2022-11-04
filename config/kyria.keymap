@@ -6,7 +6,6 @@
 #define DEFAULT 0
 #define SYM     1
 #define NUM     2
-#define UTIL    3
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -55,7 +54,7 @@
     &gresc    &kp Q &kp W &kp E      &kp R      &kp T                                                    &kp Y         &kp U      &kp I     &kp O   &kp P &kp BSPC
     &sk LSHIFT &kp A &kp S &kp D      &kp F      &kp G                                                    &kp H         &kp J      &kp K    &kp L   &kp SEMICOLON &sk RSHIFT
     &trans    &kp Z &kp X &kp C      &kp V      &kp B         &kp TAB     &kp EQUAL &kp SQT   &kp ESC     &kp N         &kp M      &kp COMMA &kp DOT &kp FSLH &kp UNDER
-                          &caps_word &sk LCTRL &lt NUM SPACE &lt SYM RET &kp LALT  &kp RALT &lt SYM RET &lt NUM SPACE &sk RCTRL &mo UTIL 
+                          &caps_word &sk LCTRL &lt NUM SPACE &lt SYM RET &kp LALT  &kp RALT &lt SYM RET &lt NUM SPACE &sk RCTRL &mo trans 
             >;
         };
 
@@ -94,22 +93,6 @@
             >;
         };
 
-        utility_layer {
-// ----------------------------------------- UTILITY LAYER --------------------------------------------
-// | F1  | F2  | F3  | F4  | F5  | F6  |                          | F7  | F8  | F9  | F10 | F11 | F12 |
-// | EFF | SPI | BRI | SAI | HUI | TOG |                          | BT0 | BT1 | BT2 | BT3 | BT4 |     |
-// | EFR | SPD | BRD | SAD | HUD | PTG | ESC | SPC |  |     | GUI | PTG | NXT | PRV | CLR |     | BTG |
-//                   | MUT | TAB | CTR | SFT | SPC |  |     | BSP | DEL | ALT | GMR |
-
-            label = "Utility";
-
-            bindings = <
-    &none &none &kp N7 &kp N8 &kp N9 &kp PLUS                           &none &none    &none  &none    &none      &kp DEL
-    &none &none &kp N4 &kp N5 &kp N6 &kp EQUAL                          &kp LEFT &kp DOWN &kp UP &kp RIGHT &none  &none
-    &none &none &kp N1 &kp N2 &kp N3 &kp MINUS &trans &none &none &none &none &none    &none  &none    &none      &none
-                       &none  &none  &kp N0    &trans &none &none &none &none &none    &none
- 
-           >;
-        };          
+         
     };
 };
