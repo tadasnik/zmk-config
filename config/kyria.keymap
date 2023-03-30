@@ -49,7 +49,7 @@
 //                   | cap | CTR | NUM |  COM   | ALT |  | ALT | COM | SPC | CTR |UTIL |
 
             label = "Default";
-.><
+
             bindings = <
     &gresc     &kp Q &kp W &kp F &kp P &kp B                                                    &kp J         &kp L      &kp U     &kp Y   &kp APOS &kp BSPC
     &sk LSHIFT &kp A &kp R &kp S &kp T &kp G                                                    &kp M         &kp N      &kp E     &kp I   &kp O    &sk RSHIFT
