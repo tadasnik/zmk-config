@@ -4,9 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 #define DEFAULT 0
-#define SYM     1
-#define NUM     2
-#define UTIL    3
+#define NUM     1
+#define UTIL    2
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -44,36 +43,18 @@
 
         default_layer {
 // --------------------------------------------- Colemak - DH -------------------------------------------
-// | ESC |  Q  |  W  |  F  |  P  |  B  |                             |  J  |  L  |  U  |  Y  |  '  | BSPC|
+// | ESC |  Q  |  W  |  F  |  P  |  B  |                             |  J  |  L  |  U  |  Y  |  '" | BSPC|
 // | SHT |  A  |  R  |  S  |  T  |  G  |                             |  M  |  N  |  E  |  I  |  O  | SHT |
-// |     |  Z  |  X  |  C  |  D  |  V  |  TAB   |     |  |     |     |  K  |  H  |  ,  |  .  |  /  | _   |
-//                   | cap | CTR | NUM |  ALT   | SYM |  |     | RET | SPC | CTR |UTIL |
+// | #~  |  Z  |  X  |  C  |  D  |  V  |  TAB   | =+  |  |     |     |  K  |  H  |  ,< |  .> |  /? | _   |
+//                   | cap | CTR | NUM |  COM   | ALT |  | ALT | COM | SPC | CTR |UTIL |
 
             label = "Default";
-
+.><
             bindings = <
-                &gresc    &kp Q &kp W &kp F      &kp P      &kp B                                                    &kp J         &kp L      &kp U     &kp Y   &kp APOS &kp BSPC
-    &sk LSHIFT &kp A &kp R &kp S      &kp T      &kp G                                                    &kp M         &kp N      &kp E     &kp I   &kp O    &sk RSHIFT
-    &trans    &kp Z &kp X &kp C      &kp D      &kp V         &kp TAB     &kp EQUAL &trans   &kp ESC     &kp K         &kp H      &kp COMMA &kp DOT &kp FSLH &kp UNDER
-                          &caps_word &sk LCTRL &lt NUM SPACE &lt SYM RET &kp LALT  &kp RALT &lt SYM RET &lt NUM SPACE &sk RCTRL &mo UTIL
-            >;
-        };
-
-
-        sym_layer {
-// ------------------------------------------ MODIFIER LAYER -------------------------------------------
-// | ESC |  <  |  [  |  {  |  (  |  /  |                           |  \  |  )  |  }  |  ]  |  >  | DEL  |
-// | TAB |  #  |  *  |  +  |  _  |  @  |                           |  &  |  -  |  =  |  ^  |  $  |  '  |
-// | SFT |  %  |  !  |  `  |  :  |  '  | ESC |     |  | RET |  GUI |  "  |  ;  |  ~  |  ?  |  |  | CTR |
-//                   | MUT | TAB | CTR | SFT |     |  | RET |  BSP | DEL | ALT |     |
-
-            label = "Symbols";
-
-            bindings = <
-    &kp CARET &kp EXCL  &kp AMPS  &kp LBRC &kp RBRC &kp AT                                    &none &none    &none  &none    &none      &kp DEL
-    &kp GRAVE &kp PRCNT &kp COLON &kp LPAR &kp RPAR &kp HASH                                  &none &kp LEFT &kp UP &kp DOWN &kp RIGHT  &none  
-    &kp DLLR  &kp PIPE  &kp SEMI  &kp LBKT &kp RBKT &kp STAR &kp TILDE  &kp FSLH  &none &none &none &none    &none  &none    &none      &none  
-                                  &trans   &trans   &trans   &kp UNDER  &kp BSLH  &none &none &none &none    &none                             
+    &gresc     &kp Q &kp W &kp F &kp P &kp B                                                    &kp J         &kp L      &kp U     &kp Y   &kp APOS &kp BSPC
+    &sk LSHIFT &kp A &kp R &kp S &kp T &kp G                                                    &kp M         &kp N      &kp E     &kp I   &kp O    &sk RSHIFT
+    &kp NUHS   &kp Z &kp X &kp C &kp D &kp V     &kp TAB  &kp EQUAL      &kp MINUS  &kp ESC     &kp K         &kp H      &kp COMMA &kp DOT &kp FSLH &kp UNDER
+              &caps_word &sk LCTRL &lt NUM SPACE &lt LCMD RET &kp LALT  &kp RALT   &lt RCMD RET &lt NUM SPACE &sk RCTRL &mo UTIL
             >;
         };
 
@@ -87,10 +68,11 @@
             label = "Number";
 
             bindings = <
-    &none &none &kp N7 &kp N8 &kp N9 &kp PLUS                           &none &none    &none  &none    &none     &kp DEL
-    &none &none &kp N4 &kp N5 &kp N6 &kp EQUAL                          &none &kp LEFT &kp UP &kp DOWN &kp RIGHT &none
-    &none &none &kp N1 &kp N2 &kp N3 &kp MINUS &trans &none &none &none &none &none    &none  &none    &none     &none
-                       &none  &none  &kp N0    &trans &none &none &none &none &none    &none
+    &kp CARET &kp N1   &kp N2   &kp N3   &kp N4   &kp N5                            &kp N6   &kp N7    &kp N8   &kp N9   &kp N0    &kp DEL
+    &kp GRAVE &kp LBKT &kp RBKT &kp LPAR &kp RPAR &kp AT                            &kp NUHS &kp LEFT  &kp UP   &kp DOWN &kp RIGHT &kp COLON
+    &kp DLLR  &kp FSLH &kp BSLH &kp LBRC &kp RBRC &kp STAR &kp TILDE &none &none &none &kp AMPS &kp PRCNT &kp DLLR &kp PIPE &kp CARET &kp SEMI
+                       &none    &none    &kp EQUAL &kp PLUS &kp MINUS &kp FSLH &kp STAR &none &none    &none
+
             >;
         };
 
